@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <title>RIALSNAKE</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="corner-logo">
+    <img src="assets/rialo_logo.png" alt="Rialo Logo">
+    <span>RIALO GAMES</span>
+  </div>
+
+  <div class="wrap">
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAfYAAAHxCAYAAACf7p4EAAAQAElEQVR4Aey9B2AUR5b/X9U9M8o5B0QGAQJJSGQklEgigxEGDA7rbG+w9zbf/c+/u927vb3b271dh7WxwQRjW5iggEAkkaPIOWeUc57Q/X+vRyMECBBoJM1o3qi/U9XV1VWvPh1eV3VPS2D0IQJEgAgQ" alt="Rialo Logo" class="logo-img" />
+    <h1>RIALSNAKE</h1>
+    <div class="meta">⬅️ ⬆️ ⬇️ ➡️ / WASD · P=Pause · R=Restart</div>
+
+    <div class="phone">
+      <div class="screen">
+        <div class="topbar">
+          <span>RIALO</span>
+          <span id="score">SCORE 0</span>
+        </div>
+        <canvas id="game" width="360" height="360"></canvas>
+      </div>
+      <div class="hud">
+        <button class="btn" id="pause">⏸ Pause</button>
+        <button class="btn" id="restart">🔁 Restart</button>
+        <div class="controls">
+           <div class="ctrl-row">
+              <button class="ctrl-btn" id="up">⬆️</button>
+            </div>
+            <div class="ctrl-row">
+              <button class="ctrl-btn" id="left">⬅️</button>
+              <button class="ctrl-btn" id="down">⬇️</button>
+              <button class="ctrl-btn" id="right">➡️</button>
+            </div>
+        </div>
+
+        <div class="controls">
+  <div class="ctrl-row">
+    <button class="ctrl-btn" id="up">⬆️</button>
+  </div>
+  <div class="ctrl-row">
+    <button class="ctrl-btn" id="left">⬅️</button>
+    <button class="ctrl-btn" id="down">⬇️</button>
+    <button class="ctrl-btn" id="right">➡️</button>
+  </div>
+</div>
+      </div>
+      <div class="note">High Score: <span id="highscore">0</span></div>
+    </div>
+
+    <div class="footer">© RialSnake by Lerand MT · Saved locally & responsive for mobile</div>
+  </div>
+
+  <script src="game.js"></script>
+</body>
+</html>
