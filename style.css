@@ -1,0 +1,252 @@
+:root {
+  --bg: #efe8d8;
+  --ink: #111;
+}
+
+html, body {
+  height: 100%;
+  margin: 0;
+  color: var(--ink);
+  font-family: ui-monospace, Menlo, Consolas, monospace;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+html, body {
+  background-color: #efe8d8; /* warna dasar, boleh kamu ubah */
+  background-image: url("bg_rialo.png"); /* nama file foto kamu */
+  background-size: cover;        /* cover biar penuh layar */
+  background-repeat: no-repeat;  /* jangan diulang */
+  background-position: center;   /* tengah */
+  background-attachment: fixed;  /* biar statis */
+}
+
+
+.wrap {
+  width: 100%;
+  max-width: 420px;
+  padding: 12px;
+  box-sizing: border-box;
+  z-index: 1;
+  position: relative;
+}
+
+.logo-img {
+  display: block;
+  margin: 0 auto 10px;
+  width: 80px;
+  height: auto;
+  filter: drop-shadow(0 2px 1px rgba(0, 0, 0, 0.25));
+  transition: transform 0.2s ease;
+}
+.logo-img:hover { transform: scale(1.08); }
+
+h1 {
+  text-align: center;
+  margin: 4px 0 8px;
+  font-weight: 900;
+  letter-spacing: 0.06em;
+
+  color: #d7b77b; /* Warna gold muda elegan */
+  text-shadow: 0 2px 3px rgba(0, 0, 0, 0.3); /* bayangan biar kebaca di latar gelap */
+  transition: all 0.3s ease-in-out;
+}
+
+h1:hover {
+  text-shadow: 0 3px 6px rgba(0, 0, 0, 0.5);
+  transform: scale(1.02);
+}
+
+.meta {
+  color: #6f6553; /* abu hangat */
+  text-shadow: 0 1px 1px rgba(0,0,0,0.2);
+  opacity: 0.9;
+}
+
+.footer {
+  color: #91846b; /* beige abu muda */
+  text-shadow: 0 1px 1px rgba(0,0,0,0.25);
+  transition: color 0.3s ease-in-out;
+}
+
+.footer:hover {
+  color: #d7b77b; /* sedikit gold kalau di-hover */
+}
+
+.phone {
+  border: 3px solid var(--ink);
+  border-radius: 22px;
+  padding: 12px;
+  background: #f8f5ee;
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.25);
+}
+
+.screen {
+  position: relative;
+  border: 2px solid var(--ink);
+  border-radius: 12px;
+  overflow: hidden;
+  background: linear-gradient(#fff7e6, #efe8d8);
+}
+
+canvas {
+  display: block;
+  width: 100%;
+  aspect-ratio: 1/1;
+  image-rendering: pixelated;
+  background: #efe8d8;
+}
+
+.topbar {
+  position: absolute;
+  inset: 6px 6px auto 6px;
+  height: 22px;
+  border: 2px solid var(--ink);
+  border-radius: 8px;
+  background: #efe8d8;
+  color: #111;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 8px;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.hud {
+  display: flex;
+  gap: 10px;
+  justify-content: space-between;
+  margin-top: 10px;
+}
+
+.btn {
+  flex: 1;
+  padding: 10px;
+  border: 2px solid var(--ink);
+  border-radius: 10px;
+  background: #fff;
+  cursor: pointer;
+  font-weight: 700;
+  font-size: 14px;
+}
+.btn:active { transform: translateY(1px); }
+
+.note { text-align: center; font-size: 12px; opacity: .8; margin-top: 6px; }
+.footer { text-align: center; margin-top: 10px; font-size: 12px; opacity: .8; }
+
+/* === Logo + Teks di pojok kiri atas === */
+.corner-logo {
+  position: fixed;
+  top: 12px;
+  left: 20px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  z-index: 999;
+  user-select: none;
+  text-decoration: none;
+}
+
+.corner-logo img {
+  width: 26px;
+  height: auto;
+
+  /* 🎨 efek recolor */
+  filter: brightness(1.6) invert(1);
+
+  /* tambahan opsional biar halus */
+  drop-shadow(0 1px 1px rgba(0,0,0,0.2));
+}
+
+
+.corner-logo span {
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  color: #d7b77b; /* gold lembut, biar senada sama judul */
+  text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+  font-family: ui-monospace, Menlo, Consolas, monospace;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.corner-logo:hover span {
+  opacity: 0.75; /* efek halus saat hover */
+}
+
+.controls {
+  display: none; /* default: disembunyikan di PC */
+  margin-top: 16px;
+  text-align: center;
+}
+
+.ctrl-row {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin: 4px 0;
+}
+
+.ctrl-btn {
+  width: 60px;
+  height: 60px;
+  font-size: 24px;
+  border: 2px solid var(--ink);
+  border-radius: 12px;
+  background: #fff;
+  color: var(--ink);
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: 0 4px 0 rgba(0,0,0,0.25);
+  transition: transform 0.1s ease;
+}
+
+.ctrl-btn:active {
+  transform: scale(0.95);
+}
+/* === Tap to Start Overlay === */
+#overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(10, 10, 10, 0.96);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  color: #d7b77b;
+  font-family: ui-monospace, Menlo, Consolas, monospace;
+  animation: fadeIn 0.5s ease-out;
+}
+
+.overlay-box {
+  border: 3px solid #d7b77b;
+  border-radius: 16px;
+  padding: 24px 40px;
+  text-align: center;
+  background: rgba(239, 232, 216, 0.05);
+  box-shadow: 0 0 15px rgba(215, 183, 123, 0.3);
+}
+
+#overlay h2 {
+  font-size: 24px;
+  letter-spacing: 0.05em;
+  text-shadow: 0 2px 6px rgba(215, 183, 123, 0.4);
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* Tampilkan hanya di HP */
+@media (max-width: 768px) {
+  .controls {
+    display: block;
+  }
+}
+
+@media (max-width: 480px) {
+  .wrap { padding: 6px; }
+  h1 { font-size: 20px; }
+}
